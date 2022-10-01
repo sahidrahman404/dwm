@@ -186,8 +186,8 @@ static Key keys[] = {
        (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } }, */
     {MODKEY, XK_e, spawn,
      SHCMD("emacsclient --create-frame --alternate-editor='emacs'")},
-    /* { MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e
-       abook -C
+    /* { MODKEY|ShiftMask,		XK_e,		spawn,
+       SHCMD(TERMINAL " -e abook -C
        ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") }, */
     {MODKEY,
      XK_r,
@@ -270,8 +270,8 @@ static Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_x,		spawn, SHCMD("")
      * },
      */
-    /* { MODKEY,			XK_c,		spawn,		{.v = (const char*[]){
-       TERMINAL,
+    /* { MODKEY,			XK_c,		spawn,		{.v =
+       (const char*[]){ TERMINAL,
        "-e", "profanity", NULL } } }, */
     /* { MODKEY|ShiftMask,		XK_c,		spawn, SHCMD("")
      * },
@@ -309,25 +309,27 @@ static Key keys[] = {
     {MODKEY | ShiftMask, XK_Page_Up, shifttag, {.i = -1}},
     {MODKEY, XK_Page_Down, shiftview, {.i = +1}},
     {MODKEY | ShiftMask, XK_Page_Down, shifttag, {.i = +1}},
-    /* { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep
-       -v
+    /* { MODKEY,			XK_Insert,	spawn,
+       SHCMD("xdotool type
+       $(grep -v
        '^#'
        ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") }, */
 
     {MODKEY, XK_F1, spawn,
      SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -")},
-    /* { MODKEY,			XK_F2,		spawn,		{.v = (const
-       char*[]){ "tutorialvids", NULL } } }, */
+    /* { MODKEY,			XK_F2,		spawn,		{.v =
+       (const char*[]){ "tutorialvids", NULL } } }, */
     {MODKEY, XK_F3, spawn, {.v = (const char *[]){"displayselect", NULL}}},
     {MODKEY, XK_F4, spawn,
      SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)")},
     {MODKEY, XK_F5, spawn, SHCMD("anki")},
-    /* { MODKEY,			XK_F6,		spawn,		{.v = (const char*[]){
-       "torwrap", NULL } } }, */
-    /* { MODKEY,			XK_F7,		spawn,		{.v = (const
-       char*[]){ "td-toggle", NULL } } }, */
-    /* { MODKEY,			XK_F8,		spawn,		{.v = (const char*[]){
-       "mw",
+    {MODKEY, XK_F6, spawn, SHCMD("qbittorrent")},
+    /* { MODKEY,			XK_F6,		spawn,		{.v =
+       (const char*[]){ "torwrap", NULL } } }, */
+    /* { MODKEY,			XK_F7,		spawn,		{.v =
+       (const char*[]){ "td-toggle", NULL } } }, */
+    /* { MODKEY,			XK_F8,		spawn,		{.v =
+       (const char*[]){ "mw",
        "-Y", NULL } } }, */
     {MODKEY, XK_F9, spawn, {.v = (const char *[]){"dmenumount", NULL}}},
     {MODKEY, XK_F10, spawn, {.v = (const char *[]){"dmenuumount", NULL}}},
