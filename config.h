@@ -4,6 +4,7 @@
 #define TERMINAL "alacritty"
 #define TERMCLASS "alacritty"
 #define BROWSER "firefox"
+#define DEVBROWSER "google-chrome-stable"
 #define DICTIONARY "ldoce5viewer"
 
 /* appearance */
@@ -182,8 +183,10 @@ static Key keys[] = {
     {MODKEY, XK_q, killclient, {0}},
     {MODKEY | ShiftMask, XK_q, spawn, {.v = (const char *[]){"sysact", NULL}}},
     {MODKEY, XK_w, spawn, {.v = (const char *[]){BROWSER, NULL}}},
-    /* { MODKEY|ShiftMask,		XK_w,		spawn,		{.v =
-       (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } }, */
+    {MODKEY | ShiftMask,
+     XK_w,
+     spawn,
+     {.v = (const char *[]){DEVBROWSER, NULL}}},
     {MODKEY, XK_e, spawn,
      SHCMD("emacsclient --create-frame --alternate-editor='emacs'")},
     /* { MODKEY|ShiftMask,		XK_e,		spawn,
