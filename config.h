@@ -4,8 +4,8 @@
 #define TERMINAL "alacritty"
 #define TERMCLASS "alacritty"
 #define BROWSER "firefox"
+#define NOTE "logseq"
 #define DEVBROWSER "google-chrome-stable"
-#define DICTIONARY "ldoce5viewer"
 
 /* appearance */
 static unsigned int borderpx = 3; /* border pixel of windows */
@@ -189,17 +189,12 @@ static Key keys[] = {
      {.v = (const char *[]){DEVBROWSER, NULL}}},
     {MODKEY, XK_e, spawn,
      SHCMD("emacsclient --create-frame --alternate-editor='emacs'")},
-    /* { MODKEY|ShiftMask,		XK_e,		spawn,
-       SHCMD(TERMINAL " -e abook -C
-       ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") }, */
+    // {MODKEY | ShiftMask, XK_p, spawn, SHCMD("./Downloads/logseq.AppImage")},
     {MODKEY,
      XK_r,
      spawn,
      {.v = (const char *[]){TERMINAL, "-e", "lfrun", NULL}}},
-    {MODKEY | ShiftMask,
-     XK_r,
-     spawn,
-     {.v = (const char *[]){DICTIONARY, NULL}}},
+    {MODKEY | ShiftMask, XK_r, spawn, {.v = (const char *[]){NOTE, NULL}}},
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},             /* tile */
     {MODKEY | ShiftMask, XK_t, setlayout, {.v = &layouts[1]}}, /* bstack */
     {MODKEY, XK_y, setlayout, {.v = &layouts[2]}},             /* spiral */
